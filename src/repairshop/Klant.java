@@ -9,6 +9,14 @@ public class Klant {
         this.voornaam = voornaam;
     }
 
+    public double bepaalPrijs(){
+        return 0;
+    }
+
+    public void restaureer(Item item){
+
+    }
+
     public String getNaam() {
         return naam;
     }

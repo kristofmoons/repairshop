@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8347456-a375-466b-99dd-1c978ecbb7e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e8347456-a375-466b-99dd-1c978ecbb7e9" name="Changes" comment="initialistatie van basis klassen en contructors en toStrings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repairshop/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repairshop/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repairshop/Klant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repairshop/Klant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repairshop/Restauratie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repairshop/Restauratie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +49,17 @@
       <option name="presentableId" value="Default" />
       <updated>1640620953482</updated>
       <workItem from="1640620957212" duration="6000" />
-      <workItem from="1640621385768" duration="2272000" />
+      <workItem from="1640621385768" duration="2870000" />
+      <workItem from="1640781986703" duration="725000" />
     </task>
+    <task id="LOCAL-00001" summary="initialistatie van basis klassen en contructors en toStrings">
+      <created>1640624092035</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640624092035</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -64,5 +75,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initialistatie van basis klassen en contructors en toStrings" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialistatie van basis klassen en contructors en toStrings" />
   </component>
 </project>

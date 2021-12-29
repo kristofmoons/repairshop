@@ -6,14 +6,14 @@ public class Item {
     private String probleem;
     private double prijs;
     private double maxprijs;
-    private int werkdagen;
 
-    public Item(String item, String probleem, double prijs, double maxprijs, int werkdagen) {
+
+    public Item(String item, String probleem, double prijs, double maxprijs) {
         this.item = item;
         this.probleem = probleem;
         this.prijs = prijs;
         this.maxprijs = maxprijs;
-        this.werkdagen = werkdagen;
+
     }
 
     public String getItem() {
@@ -48,13 +48,7 @@ public class Item {
         this.maxprijs = maxprijs;
     }
 
-    public int getWerkdagen() {
-        return werkdagen;
-    }
 
-    public void setWerkdagen(int werkdagen) {
-        this.werkdagen = werkdagen;
-    }
 
     @Override
     public String toString() {
@@ -63,7 +57,6 @@ public class Item {
                 ", probleem='" + probleem + '\'' +
                 ", prijs=" + prijs +
                 ", maxprijs=" + maxprijs +
-                ", werkdagen=" + werkdagen +
                 '}';
     }
 }
