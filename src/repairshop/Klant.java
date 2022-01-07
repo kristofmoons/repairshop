@@ -17,6 +17,23 @@ public class Klant {
         this.email = email;
     }
 
+    public double kortingscoupon(Item i){
+        double korting = 0;
+
+        if (i.getPrijsReparatie()>50){
+            korting = i.getPrijsReparatie()*0.95;
+        }
+        else if (i.getPrijsReparatie()>=100){
+            korting=i.getPrijsReparatie()*0.90;
+        }
+        else {
+            System.out.println("sorry je betaalt te weinig geen korting");
+            korting=i.getPrijsReparatie();
+        }
+
+        return korting;
+    }
+
 
     public void addItem(Item i) {
         mijnItems.add(i);
@@ -28,12 +45,20 @@ public class Klant {
 
     public ArrayList<Item> searchItem(String status) {
         ArrayList<Item> foundItems = new ArrayList<>();
+        int teller=0;
 
-        for (int i = 0; i < mijnItems.size(); i++) {
-            if (mijnItems.get(i).getStatus() == status)
-            {
-                foundItems.add( mijnItems.get(i));
+        for (Item mijnItem : mijnItems) {
+            if (mijnItem.getStatus() == status) {
+                teller++;
+                foundItems.add(mijnItem);
             }
+        }
+
+        if (teller==0){
+            System.out.println("sorry niks gevonden");
+        }
+        else {
+            System.out.println(teller+ " items gevonden");
         }
 
         return foundItems;
