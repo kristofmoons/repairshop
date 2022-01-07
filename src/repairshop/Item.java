@@ -2,26 +2,27 @@ package repairshop;
 
 public class Item {
 
-    private String item;
+    private String naam;
     private String probleem;
-    private double prijs;
-    private double maxprijs;
+    private double prijsReparatie;
+    private String status;
 
 
-    public Item(String item, String probleem, double prijs, double maxprijs) {
-        this.item = item;
+    public Item(String naam, String probleem, double prijsReparatie, String status) {
+        this.naam = naam;
         this.probleem = probleem;
-        this.prijs = prijs;
-        this.maxprijs = maxprijs;
-
+        this.prijsReparatie = prijsReparatie;
+        this.status = status;
     }
 
-    public String getItem() {
-        return item;
+
+
+    public String getNaam() {
+        return naam;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setNaam(String naam) {
+        this.naam = naam;
     }
 
     public String getProbleem() {
@@ -32,31 +33,28 @@ public class Item {
         this.probleem = probleem;
     }
 
-    public double getPrijs() {
-        return prijs;
+    public double getPrijsReparatie() {
+        return prijsReparatie;
     }
 
-    public void setPrijs(double prijs) {
-        this.prijs = prijs;
+    public void setPrijsReparatie(double prijsReparatie) {
+        this.prijsReparatie = prijsReparatie;
     }
 
-    public double getMaxprijs() {
-        return maxprijs;
+    public String getStatus() {
+        return status;
     }
 
-    public void setMaxprijs(double maxprijs) {
-        this.maxprijs = maxprijs;
+    public void setStatus(String status) {
+        this.status = status;
     }
-
-
 
     @Override
     public String toString() {
         return "Item{" +
-                "item='" + item + '\'' +
+                "item='" + naam + '\'' +
                 ", probleem='" + probleem + '\'' +
-                ", prijs=" + prijs +
-                ", maxprijs=" + maxprijs +
+                ", prijs=" + prijsReparatie +
                 '}';
     }
 }
