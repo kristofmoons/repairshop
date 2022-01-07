@@ -16,14 +16,28 @@ public class Klant {
         this.telefoon = telefoon;
         this.email = email;
     }
-    public void addItem (Item i){
+
+
+    public void addItem(Item i) {
         mijnItems.add(i);
     }
 
-    public void showItems(){
+    public void showItems() {
         System.out.println(mijnItems);
     }
 
+    public ArrayList<Item> searchItem(String status) {
+        ArrayList<Item> foundItems = new ArrayList<>();
+
+        for (int i = 0; i < mijnItems.size(); i++) {
+            if (mijnItems.get(i).getStatus() == status)
+            {
+                foundItems.add( mijnItems.get(i));
+            }
+        }
+
+        return foundItems;
+    }
 
 
     public String getNaam() {
@@ -63,6 +77,9 @@ public class Klant {
         return "Klant{" +
                 "naam='" + naam + '\'' +
                 ", voornaam='" + voornaam + '\'' +
+                ", telefoon='" + telefoon + '\'' +
+                ", email='" + email + '\'' +
+                ", mijnItems=" + mijnItems +
                 '}';
     }
 }

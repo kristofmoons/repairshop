@@ -15,6 +15,11 @@ public class Item {
         this.status = status;
     }
 
+    public void statusComplete(){
+        status="klaar met afhandeling";
+    }
+
+
 
 
     public String getNaam() {
@@ -51,10 +56,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "item='" + naam + '\'' +
-                ", probleem='" + probleem + '\'' +
-                ", prijs=" + prijsReparatie +
-                '}';
+        return "het item "+naam+" met het probleem:( "+probleem+ ") || reparatie kosten: "+ prijsReparatie+" || status: "+status+"\n";
     }
 }
