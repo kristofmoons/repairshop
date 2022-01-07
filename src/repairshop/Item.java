@@ -15,8 +15,26 @@ public class Item {
         this.status = status;
     }
 
+//    Random https://www.javatpoint.com/how-to-generate-random-number-in-java
     public void statusComplete(){
+       int min =0;
+       int max = 10;
+       double random = Math.random()*(max-min+1)+min;
+
+      if (random>=3){
         status="klaar met afhandeling";
+      }
+      else if (random>=2){
+          System.out.println("wegens omstandigheden hebben we meer tijd nodig voor de restauratie");
+      }
+      else if (random>=1){
+          status="";
+          System.out.println("er is een extra probleem voorgekomen en prijs is helaas daardoor gestegen");
+          prijsReparatie*=1.05;
+      }
+
+        System.out.println(status+ "");
+
     }
 
 
