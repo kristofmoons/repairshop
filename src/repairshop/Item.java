@@ -1,6 +1,9 @@
 package repairshop;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String naam;
     private String probleem;
@@ -34,6 +37,13 @@ public class Item {
       }
 
         System.out.println(status+ "");
+
+    }
+
+    public void givestatus(Item i,int statusgetal){
+        String[] statussen = {"klaar","in behandeling"};
+
+
 
     }
 
@@ -74,6 +84,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "het item "+naam+" met het probleem:( "+probleem+ ") || reparatie kosten: "+ prijsReparatie+" || status: "+status+"\n";
+        return "Naam: " + naam + "\nProbleem: " + probleem + "\nPrijsReparatie: " + prijsReparatie + "\nStatus: " + status;
     }
 }

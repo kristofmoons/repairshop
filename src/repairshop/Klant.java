@@ -1,8 +1,11 @@
 package repairshop;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Klant {
+public class Klant implements Serializable{
+    private static final long serialVersionUID = 1L;
+
     private String naam;
     private String voornaam;
     private String telefoon;
@@ -99,12 +102,6 @@ public class Klant {
 
     @Override
     public String toString() {
-        return "Klant{" +
-                "naam='" + naam + '\'' +
-                ", voornaam='" + voornaam + '\'' +
-                ", telefoon='" + telefoon + '\'' +
-                ", email='" + email + '\'' +
-                ", mijnItems=" + mijnItems +
-                '}';
+        return "Naam:" + naam + "\nVoornaam: " + voornaam  + "\nTelefoon: " + telefoon + "\nEmail: " + email + "\nItems:" + mijnItems;
     }
 }
