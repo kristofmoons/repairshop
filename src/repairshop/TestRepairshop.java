@@ -25,6 +25,8 @@ public class TestRepairshop {
         System.out.println(k1.kortingscoupon(i1));
         System.out.println("--------------");
 //        r1.WriteObjectToFile(k1);
+        k1.betaling(i2);
+        b1.betaling(i2);
 
 
 
