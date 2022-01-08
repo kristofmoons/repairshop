@@ -41,7 +41,7 @@ public class Item implements Serializable {
     }
 
     public void givestatus(Item i,int statusgetal){
-        String[] statussen = {"klaar","in behandeling"};
+        String[] statussen = {"klaar","in behandeling","meer tijd nodig","extra werk nodig"};
 
 
 

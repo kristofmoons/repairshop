@@ -67,6 +67,15 @@ public class Klant implements Serializable{
         return foundItems;
     }
 
+    public void betaling(Item i){
+       double betaalprijs = i.getPrijsReparatie();
+       double btw = 0.21;
+
+       betaalprijs+= betaalprijs*btw;
+        System.out.println("de prijs die je ga moeten betalen bij afhaling bedraagt "+betaalprijs+"$");
+
+    }
+
 
     public String getNaam() {
         return naam;

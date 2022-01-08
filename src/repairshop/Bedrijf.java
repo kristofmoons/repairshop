@@ -8,4 +8,7 @@ public class Bedrijf extends Klant {
         this.bedrijf = bedrijf;
     }
 
+
+
+
 }
