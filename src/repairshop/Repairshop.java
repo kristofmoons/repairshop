@@ -4,6 +4,12 @@ import java.io.*;
 import java.util.HashMap;
 
 public class Repairshop {
+    private HashMap<String, Item> items = new HashMap<>();
+    private HashMap<String, Klant> contacten = new HashMap<>();
+
+
+    public void contacteer(Klant k){
+   }
 
 //    https://examples.javacodegeeks.com/core-java/io/fileoutputstream/how-to-write-an-object-to-file-in-java/
     public void WriteObjectToFile(Object serObj) throws IOException {
@@ -17,7 +23,6 @@ public class Repairshop {
 
             // Write objects to file
             o.writeObject(serObj);
-
             o.close();
             f.close();
 

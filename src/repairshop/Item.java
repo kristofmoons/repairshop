@@ -28,10 +28,11 @@ public class Item implements Serializable {
         status="klaar met afhandeling";
       }
       else if (random>=2){
+          status ="meer tijd nodig";
           System.out.println("wegens omstandigheden hebben we meer tijd nodig voor de restauratie");
       }
       else if (random>=1){
-          status="";
+          status="extra werk nodig";
           System.out.println("er is een extra probleem voorgekomen en prijs is helaas daardoor gestegen");
           prijsReparatie*=1.05;
       }
@@ -40,11 +41,17 @@ public class Item implements Serializable {
 
     }
 
-    public void givestatus(Item i,int statusgetal){
+    public void corigeerstatus(){
         String[] statussen = {"klaar","in behandeling","meer tijd nodig","extra werk nodig"};
-
-
-
+        int teller=0;
+        for (String s : statussen) {
+            if (status != s) {
+               teller++;
+            }
+        }
+        if (teller ==4){
+            status = "in behandeling";
+        }
     }
 
 
