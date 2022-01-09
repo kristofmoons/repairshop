@@ -26,6 +26,7 @@ public class TestRepairshop {
         System.out.println(k1.searchItem("bezig met reparatie"));
         System.out.println("------------");
         System.out.println(k1.kortingscoupon(i1));
+        System.out.println(b1.kortingscoupon(i3));
         System.out.println("--------------");
        r1.WriteObjectToFile(k1);
         k1.betaling(i3);
