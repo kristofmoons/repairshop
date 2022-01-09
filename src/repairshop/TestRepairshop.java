@@ -30,6 +30,10 @@ public class TestRepairshop {
         k1.betaling(i3);
         b1.betaling(i3);
         System.out.println("--------------");
+        r1.wachtrij(i1);
+        r1.wachtrij(i2);
+        System.out.println(r1);
+
 
 
 
