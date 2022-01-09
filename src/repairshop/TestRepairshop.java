@@ -6,6 +6,7 @@ public class TestRepairshop {
     public static void main(String[] args) throws IOException {
         Repairshop r1 = new Repairshop();
         Klant k1 = new Klant("Jos","De Wolf", "04/52455313" ,"JosDeWold@email.com");
+        Klant k2 = new Klant("Jes","De vis", "04/52455313" ,"JesDekat@email.com");
         Bedrijf b1 = new Bedrijf("Jef","De Kat","04/2369745","bedr@opn&co.com","opn&co");
         Item i1 = new Item("horloge", "geeft tijd niet goed aan",50, "bezig met reparatie");
         Item i2 = new Item("Jas","mouw gescheurd",100,"bezig met reparatie");
@@ -32,7 +33,16 @@ public class TestRepairshop {
         System.out.println("--------------");
         r1.wachtrij(i1);
         r1.wachtrij(i2);
-        System.out.println(r1);
+        System.out.println(r1.getItems());
+        r1.deleteKlaar();
+        System.out.println(r1.getItems());
+        System.out.println("---------------");
+        r1.voegKlantToe(k1);
+        r1.voegKlantToe(k2);
+        r1.voegKlantToe(b1);
+//        System.out.println(r1.getContacten());
+        System.out.println("-------------------");
+        r1.klantEnHunItems();
 
 
 

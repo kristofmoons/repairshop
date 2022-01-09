@@ -1,15 +1,16 @@
 package repairshop;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 public class Repairshop {
     private HashMap<String, String> items = new HashMap<>();
     private HashMap<String, Klant> contacten = new HashMap<>();
 
+
+    public void voegKlantToe(Klant k){
+        contacten.put(k.getNaam(),k);
+    }
 
     public void wachtrij(Item i){
        if (i.getStatus()=="klaar"){
@@ -37,12 +38,28 @@ public class Repairshop {
        }
    }
 
-   public void overzichtItems(){
-        String overzicht = "";
-       for (int i = 0; i < items.size() ; i++) {
-
-       }
+   public void overzichtItems() {
+       System.out.println(items);
    }
+
+    public void klantEnHunItems(){
+        Iterator iterator = contacten.entrySet().iterator();
+        while (iterator.hasNext()) {
+
+            Map.Entry me2 = (Map.Entry) iterator.next();
+            ArrayList<Item> Items = ((Klant) me2.getValue()).getMijnItems();
+            System.out.println("de klant "+((Klant) me2.getValue()).getNaam());
+
+            for (int i = 0; i < Items.size() ; i++) {
+                System.out.println("heeft de item");
+                System.out.println(items);
+            }
+            if (Items.size()==0){
+                System.out.println("heeft geen items in behandeling");
+            }
+
+        }
+    }
 
 //    https://examples.javacodegeeks.com/core-java/io/fileoutputstream/how-to-write-an-object-to-file-in-java/
     public void WriteObjectToFile(Object serObj) throws IOException {
@@ -64,5 +81,21 @@ public class Repairshop {
         } catch (IOException e) {
             System.out.println(e);
         }
+    }
+
+    public HashMap<String, String> getItems() {
+        return items;
+    }
+
+    public void setItems(HashMap<String, String> items) {
+        this.items = items;
+    }
+
+    public HashMap<String, Klant> getContacten() {
+        return contacten;
+    }
+
+    public void setContacten(HashMap<String, Klant> contacten) {
+        this.contacten = contacten;
     }
 }

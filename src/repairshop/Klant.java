@@ -1,5 +1,6 @@
 package repairshop;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.io.Serializable;
 
@@ -77,6 +78,8 @@ public class Klant implements Serializable{
     }
 
 
+
+
     public String getNaam() {
         return naam;
     }
@@ -107,6 +110,14 @@ public class Klant implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public ArrayList<Item> getMijnItems() {
+        return mijnItems;
+    }
+
+    public void setMijnItems(ArrayList<Item> mijnItems) {
+        this.mijnItems = mijnItems;
     }
 
     @Override

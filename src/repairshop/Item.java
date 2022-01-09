@@ -25,7 +25,7 @@ public class Item implements Serializable {
        double random = Math.random()*(max-min+1)+min;
 
       if (random>=3){
-        status="klaar met afhandeling";
+        status="klaar";
       }
       else if (random>=2){
           status ="meer tijd nodig";
