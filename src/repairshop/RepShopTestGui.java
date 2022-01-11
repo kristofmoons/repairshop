@@ -12,6 +12,9 @@ public class RepShopTestGui {
 
         RepshopGui repshopGui = new RepshopGui();
         KlantPanel klantPanel = new KlantPanel(k1);
+        repshopGui.voegToe(k1);
+        repshopGui.voegToe(k2);
+        repshopGui.voegToe(b1);
 //        klantPanel.run();
         repshopGui.run();
     }
