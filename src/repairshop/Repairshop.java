@@ -83,6 +83,71 @@ public class Repairshop {
         }
     }
 
+
+//https://www.delftstack.com/howto/java/java-write-to-csv/#using-printwriter-to-read-and-write-into-a-csv-file-in-java
+    public void ExportToCSV(){
+        File CSVfile = new File("Repshop/shop.csv");
+        String strPath = CSVfile.getAbsolutePath();
+        CSVfile = new File(strPath);
+
+        try (PrintWriter pw = new PrintWriter(CSVfile)){
+            StringBuilder sb = new StringBuilder();
+            sb.append("Voornaam");
+            sb.append(';');
+            sb.append("Familienaam");
+            sb.append(';');
+            sb.append("Telefoon");
+            sb.append(';');
+            sb.append("Email");
+            sb.append('\n');
+
+            Iterator iterator = contacten.entrySet().iterator();
+            while (iterator.hasNext()) {
+
+                Map.Entry me2 = (Map.Entry) iterator.next();
+                ArrayList<Item> Items = ((Klant) me2.getValue()).getMijnItems();
+                Klant CSVKlant = (Klant) me2.getValue();
+                sb.append(CSVKlant.getVoornaam());
+                sb.append(';');
+                sb.append(CSVKlant.getNaam());
+                sb.append(';');
+                sb.append(CSVKlant.getTelefoon());
+                sb.append(';');
+                sb.append(CSVKlant.getEmail());
+                sb.append('\n');
+                if(Items.size() != 0){
+                    sb.append("Items:");
+                    sb.append(';');
+                    sb.append("Naam");
+                    sb.append(';');
+                    sb.append("Probleem");
+                    sb.append(';');
+                    sb.append("Prijs Reparatie");
+                    sb.append(';');
+                    sb.append("Status");
+                    sb.append('\n');
+                    for (int i = 0; i < Items.size() ; i++) {
+                        Item CSVItem = Items.get(i);
+                        sb.append(i + 1);
+                        sb.append(';');
+                        sb.append(CSVItem.getNaam());
+                        sb.append(';');
+                        sb.append(CSVItem.getProbleem());
+                        sb.append(';');
+                        sb.append(CSVItem.getPrijsReparatie());
+                        sb.append(';');
+                        sb.append(CSVItem.getStatus());
+                        sb.append('\n');
+                    }
+                }
+            }
+            pw.write(sb.toString());
+            pw.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     public HashMap<String, String> getItems() {
         return items;
     }
@@ -98,4 +163,11 @@ public class Repairshop {
     public void setContacten(HashMap<String, Klant> contacten) {
         this.contacten = contacten;
     }
+
+    public String getFormatCSV() {
+
+        return this.items + ";" + this.contacten + ";"  + "nieuw\n";
+    }
+
+
 }
