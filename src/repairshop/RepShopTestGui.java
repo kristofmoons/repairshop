@@ -15,6 +15,9 @@ public class RepShopTestGui {
         repshopGui.voegToe(k1);
         repshopGui.voegToe(k2);
         repshopGui.voegToe(b1);
+        repshopGui.voegItemToe(i1);
+        repshopGui.voegItemToe(i2);
+        repshopGui.voegItemToe(i3);
 //        klantPanel.run();
         repshopGui.run();
     }

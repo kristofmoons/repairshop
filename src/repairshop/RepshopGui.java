@@ -5,28 +5,31 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Iterator;
 
 public class RepshopGui {
     private JPanel paneelRepShop;
     private JButton nieuweKlantButton;
-    private JButton button2;
+    private JButton maakEenCsvAanButton;
     private JTextField telefoontextfield;
     private JTextField emailtextfield;
     private JTextField naamtextfield;
     private JTextField voornaamtextfield;
     private JList list1;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
+    private JTextField textFieldNaamItem;
+    private JTextField textFieldProbleem;
+    private JTextField textFieldPrijsrestauratie;
+    private JTextField textFieldstatus;
     private JButton nieuweItemButton;
     private JList list2;
     private Repairshop repairshop = new Repairshop();
     private DefaultListModel<String> lijstPersonen = new DefaultListModel<>();
+    private DefaultListModel<String> lijstItems = new DefaultListModel<>();
 
 
     public RepshopGui() {
         list1.setModel(lijstPersonen);
+        list2.setModel(lijstItems);
 
         nieuweKlantButton.addActionListener(new ActionListener() {
             @Override
@@ -47,6 +50,24 @@ public class RepshopGui {
                 super.mouseClicked(e);
             }
         });
+        maakEenCsvAanButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                repairshop.ExportToCSV();
+            }
+        });
+
+        nieuweItemButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String naam = textFieldNaamItem.getText();
+                String probleem = textFieldProbleem.getText();
+                double prijsrestauratie = Double.parseDouble(textFieldPrijsrestauratie.getText());
+                String status = textFieldstatus.getText();
+                Item item = new Item(naam, probleem, prijsrestauratie,status);
+//                voegToe(item);
+            }
+        });
     }
 
     public void voegToe(Klant klant){
@@ -57,9 +78,14 @@ public class RepshopGui {
             lijstPersonen.addElement(k.getNaam()+" "+k.getVoornaam());
         }
 
-
-
     }
+
+    public void voegItemToe(Item item){
+        repairshop.wachtrij(item);
+        lijstItems.removeAllElements();
+
+        }
+
 
     public void run() {
         JFrame frame = new JFrame();
